@@ -2,9 +2,9 @@
 # To compile on SunOS: add "-lsocket -lnsl" to LDFLAGS
 # To compile with PKCS11: add "-lpkcs11-helper" to LDFLAGS
 
-CFLAGS	?= -O2 -fprofile-arcs -ftest-coverage
+CFLAGS	?= -O2 -fprofile-arcs -ftest-coverage --coverage
 WARNING_CFLAGS ?= -Wall -W -Wdeclaration-after-statement -Wno-unused-function -Wno-unused-value
-LDFLAGS ?=
+LDFLAGS ?= --coverage
 
 LOCAL_CFLAGS = $(WARNING_CFLAGS) -I../include -D_FILE_OFFSET_BITS=64
 LOCAL_LDFLAGS = -L../library 			\
